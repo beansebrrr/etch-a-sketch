@@ -17,7 +17,7 @@ hideGridCheckbox.addEventListener("click", () => {
 btnResizeCanvas.addEventListener("click", () => {
   let gridSize;
   do {
-    gridSize = Number(prompt("what"));
+    gridSize = Number(prompt("Enter your canvas size"));
   } while (!Number.isInteger(gridSize) || gridSize < 1 || gridSize > 100);
 
   gridContainer.replaceChildren();
