@@ -5,15 +5,46 @@
 }
 
 body {
-  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #ffdd00;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  font-family: inherit;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: #000 solid 2px;
+  box-shadow: #000 0 4px;
+  padding: 0.5rem;
+  transition: all 200ms ease-out;
+}
+button:active {
+  transform: translateY(4px);
+  filter: brightness(90%);
+  box-shadow: none;
+}
+
+.config {
+  width: fit-content;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-shrink: 5;
+  
 }
 
 .gridContainer {
-  width: 720px;
-  height: 720px;
+  background-color: #fff;
+  width: 640px;
+  aspect-ratio: 1 / 1;
   margin: 12px auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   border: #000 solid 2px;
 }
 
@@ -26,4 +57,9 @@ body {
 .gridCell {
   flex: 1;
   border: #0000002c solid 0.25px;
+  transition: all 100ms ease;
+}
+
+.hideGrid {
+  border: none;
 }

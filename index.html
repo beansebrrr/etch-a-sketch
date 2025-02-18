@@ -8,7 +8,22 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <button id="btnResizeCanvas">New Canvas</button>
+  <section class="config">
+    <button id="btnResizeCanvas">New Canvas</button>
+    <div>
+      <input type="checkbox" id="randomCellColor">
+        Randomly-colored cells
+      </input>
+      <br>
+      <input type="checkbox" id="gradualDarken">
+        Cells darken every time you hover on them
+      </input>
+      <br>
+      <input type="checkbox" id="hideGrid">
+        Hide grid
+      </input>
+    </div>
+    </section>
   <div class="gridContainer">
   </div>
 </body>

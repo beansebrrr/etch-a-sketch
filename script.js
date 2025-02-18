@@ -1,6 +1,19 @@
 const gridContainer = document.querySelector(".gridContainer");
 const btnResizeCanvas = document.querySelector("#btnResizeCanvas");
 
+const randomCellColorCheckbox = document.querySelector("#randomCellColor")
+const gradualDarkenCheckbox = document.querySelector("#gradualDarken")
+const hideGridCheckbox = document.querySelector("#hideGrid")
+
+hideGridCheckbox.addEventListener("click", () => {
+  const cells = document.querySelectorAll(".gridCell")
+
+  cells.forEach((cell) => {
+    cell.classList.toggle("hideGrid");
+    console.log(cell)
+  });
+});
+
 btnResizeCanvas.addEventListener("click", () => {
   let gridSize;
   do {
@@ -29,11 +42,25 @@ function createRow(width) {
 
 function createCell() {
   const cell = document.createElement("div");
-  const cellColor = `rgb(${randint(128,255)}, ${randint(128,255)}, ${randint(128,255)})`;
+  let cellColor = "#bbaaff"
+  let brightness = 1
   
   cell.classList = ["gridCell"];
   cell.addEventListener("mouseenter", () => {
+
+    if (randomCellColorCheckbox.checked) {
+      cellColor = `rgb(${randint(128,255)}, ${randint(128,255)}, ${randint(128,255)})`;
+    } else if (cellColor != "#bbaaff") {
+      cellColor = "#bbaaff";      
+    };
     cell.style.backgroundColor = cellColor;
+    
+    if (gradualDarkenCheckbox.checked) {
+      brightness -= 0.1;
+    } else {
+      brightness = 1;
+    };
+    cell.style.filter = `brightness(${brightness})`;
   });
   return cell;
 };
