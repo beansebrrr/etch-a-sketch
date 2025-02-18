@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.gridContainer {
+  width: 720px;
+  height: 720px;
+  margin: 12px auto;
+  display: flex;
+  flex-flow: column wrap;
+  border: #000 solid 2px;
+}
+
+.gridRow {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.gridCell {
+  flex: 1;
+  border: #0000002c solid 0.25px;
+}
