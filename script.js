@@ -54,13 +54,14 @@ function createCell() {
       cellColor = "#bbaaff";      
     };
     cell.style.backgroundColor = cellColor;
+    cell.style.filter = `brightness(${brightness})`;
     
     if (gradualDarkenCheckbox.checked) {
       brightness -= 0.1;
+      if (brightness < 0.1) { brightness = 0 };
     } else {
       brightness = 1;
     };
-    cell.style.filter = `brightness(${brightness})`;
   });
   return cell;
 };
